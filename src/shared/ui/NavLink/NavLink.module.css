@@ -1,0 +1,23 @@
+.navLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    background-color: transparent;
+    border-radius: 16px;
+    height: 26px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-color-dark);
+}
+
+.navLink:hover {
+    padding: 10px;
+    box-shadow:
+        /* зелёная дымка #9CFD87 */
+        0 0 8px rgba(156, 253, 135, 0.9),
+        0 0 18px rgba(156, 253, 135, 0.8),
+        0 0 32px rgba(156, 253, 135, 0.7),
+        0 0 52px rgba(156, 253, 135, 0.6);
+}
