@@ -1,0 +1,17 @@
+.pageContainer {
+    padding-inline: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkContainer {
+    align-self: flex-start;
+    margin-top: 42px;
+    margin-bottom: 154px;
+}
+
+.linkText {
+    text-transform: uppercase;
+}

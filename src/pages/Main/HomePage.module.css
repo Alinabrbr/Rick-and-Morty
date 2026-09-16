@@ -1,0 +1,11 @@
+.pageContainer {
+    padding-inline: 198px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    padding: 26px 0 40px 0;
+}

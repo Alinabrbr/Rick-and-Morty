@@ -14,18 +14,18 @@ export default defineConfig([
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
             ecmaVersion: 2020,
-            globals: globals.browser
+            globals: globals.browser,
         },
         plugins: {
             prettier: eslintPluginPrettier,
-            'simple-import-sort': simpleImportSort
+            'simple-import-sort': simpleImportSort,
         },
         extends: [
             js.configs.recommended,
             ...tsEslint.configs.recommended,
             reactHooks.configs.flat.recommended,
             reactRefresh.configs.vite,
-            prettierConfig
+            prettierConfig,
         ],
         rules: {
             'simple-import-sort/imports': [
@@ -34,11 +34,11 @@ export default defineConfig([
                     groups: [
                         ['^\\u0000'],
                         ['^react', '^@?\\w'],
-                        ['^(@|components|utils|hooks)(/.*|$)'],
+                        ['^(@|ui|utils|hooks)(/.*|$)'],
                         ['^\\./(?!.*\\.(css|scss|sass|less|styl)$).*$', '^\\.\\.(?!/?$).*$', '^\\.\\./?$'],
-                        ['^.+\\.(css|scss|sass|less|styl)$']
-                    ]
-                }
+                        ['^.+\\.(css|scss|sass|less|styl|module\\.css)$'],
+                    ],
+                },
             ],
             'simple-import-sort/exports': 'error',
             'prettier/prettier': 'warn',
@@ -48,8 +48,8 @@ export default defineConfig([
                 {
                     vars: 'all',
                     args: 'after-used',
-                    ignoreRestSiblings: true
-                }
+                    ignoreRestSiblings: true,
+                },
             ],
             'no-undef': 'off',
             'no-console': 'error',
@@ -58,16 +58,16 @@ export default defineConfig([
                 'error',
                 'single',
                 {
-                    allowTemplateLiterals: true
-                }
+                    allowTemplateLiterals: true,
+                },
             ],
             'space-before-function-paren': [
                 'error',
                 {
                     anonymous: 'never',
                     named: 'never',
-                    asyncArrow: 'always'
-                }
+                    asyncArrow: 'always',
+                },
             ],
             'no-multi-spaces': 'error',
             'template-tag-spacing': 'error',
@@ -78,9 +78,9 @@ export default defineConfig([
                 'warn',
                 {
                     array: false,
-                    object: true
-                }
-            ]
-        }
-    }
+                    object: true,
+                },
+            ],
+        },
+    },
 ]);

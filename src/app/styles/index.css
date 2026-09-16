@@ -1,0 +1,99 @@
+@import url('../../assets/fonts/fonts.css');
+
+:root {
+    --text-color-light: #fff;
+    --text-color-dark: #090200;
+    --background-color-dark: #212121;
+    --background-color-light: #fff;
+    --background-color-cards: #333;
+    --accent-color: #ff4310;
+    --secondary-color-light: #bfbfbf;
+    --secondary-color-dark: #808080;
+    --blur-color: #212121;
+    --button-color-main: #ff4310;
+    --button-color-hovered: #cf360c;
+    --button-color-pressed: #b22c08;
+    --button-color-disabled: #bfbfbf;
+    --service-color-error: #f20f01;
+    --service-color-success: #0fdb5a;
+
+    --font-roboto: 'Roboto', Arial, sans-serif;
+    --font-poppins: 'Poppins', Arial, sans-serif;
+    --font-karla: 'Karla', Arial, sans-serif;
+
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-xxl: 32px;
+
+    --line-height-xs: 1;
+    --line-height-sm: 1.2;
+    --line-height-md: 1.3;
+    --line-height-lg: 1.5;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:
+        var(--font-roboto),
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
+}
+
+.text_roboto_regular_size-sm {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-md);
+    font-weight: var(--font-weight-regular);
+}
+
+.text_roboto_regular_size-md {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    font-weight: var(--font-weight-regular);
+}
+
+.text_roboto_medium_size-xl {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-md);
+    font-weight: var(--font-weight-medium);
+}
+
+.text_poppins_semibold_size-sm {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-xs);
+    font-weight: var(--font-weight-semibold);
+}
+
+.text_karla_bold_size-lg {
+    font-family: var(--font-karla), sans-serif;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-xs);
+    font-weight: var(--font-weight-bold);
+}
