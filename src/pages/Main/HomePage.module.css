@@ -1,11 +1,18 @@
 .pageContainer {
-    padding-inline: 198px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-inline: 198px;
 }
 
 .logo {
     padding: 26px 0 40px 0;
+}
+
+.optionComponentWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 5px;
 }

@@ -1,19 +1,22 @@
 import clsx from 'clsx';
 
-import { LoadingImage } from '@/assets/images';
+import { LoadingImage } from '@/assets';
+
+import { LoaderDefaultText } from './Loader.constants';
 
 import styles from './Loader.module.css';
 
 interface LoaderProps {
     text?: string;
-    typeSize?: 'small' | 'large';
+    mode?: 'small' | 'large';
+    textClassName?: string;
 }
 
-export const Loader = ({ text, typeSize = 'large' }: LoaderProps) => {
+export const Loader = ({ text, mode = 'large', textClassName = 'text_karla_bold_size-lg' }: LoaderProps) => {
     return (
-        <div className={clsx(styles.loaderContainer, styles[typeSize])}>
-            <img className={styles.loaderImage} src={LoadingImage} alt='Loader' />
-            {text && <p className={clsx(styles.text, 'text_karla_bold_size-lg')}>{text}</p>}
+        <div className={clsx(styles.loaderContainer, styles[mode])}>
+            <img className={styles.loaderImage} src={LoadingImage} alt='Loading animation' />
+            <p className={clsx(styles.text, textClassName)}>{text ?? LoaderDefaultText}</p>
         </div>
     );
 };
