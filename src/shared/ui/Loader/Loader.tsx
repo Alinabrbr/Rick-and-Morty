@@ -8,13 +8,13 @@ import styles from './Loader.module.css';
 
 interface LoaderProps {
     text?: string;
-    mode?: 'small' | 'large';
+    size?: 'small' | 'large';
     textClassName?: string;
 }
 
-export const Loader = ({ text, mode = 'large', textClassName = 'text_karla_bold_size-lg' }: LoaderProps) => {
+export const Loader = ({ text, size = 'large', textClassName }: LoaderProps) => {
     return (
-        <div className={clsx(styles.loaderContainer, styles[mode])}>
+        <div className={clsx(styles.loaderContainer, styles[size])}>
             <img className={styles.loaderImage} src={LoadingImage} alt='Loading animation' />
             <p className={clsx(styles.text, textClassName)}>{text ?? LoaderDefaultText}</p>
         </div>

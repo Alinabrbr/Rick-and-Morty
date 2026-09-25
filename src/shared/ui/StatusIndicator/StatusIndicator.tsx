@@ -14,8 +14,9 @@ interface StatusIndicatorProps {
 
 const isValidStatus = (status: string): status is StatusIndicatorStatus => status in STATUS_COLOR;
 
-export const StatusIndicator = ({ status = 'Alive', size = 'small' }: StatusIndicatorProps) => {
-    const backgroundColor = isValidStatus(status) ? STATUS_COLOR[status] : STATUS_COLOR.Alive;
+export const StatusIndicator = ({ status = 'alive', size = 'small' }: StatusIndicatorProps) => {
+    const lowerStatus = status.toLowerCase();
+    const backgroundColor = isValidStatus(lowerStatus) ? STATUS_COLOR[lowerStatus] : STATUS_COLOR.alive;
 
     return (
         <div

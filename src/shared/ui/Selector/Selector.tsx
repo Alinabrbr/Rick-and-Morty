@@ -5,14 +5,14 @@ import { IconDropDown } from '@/assets';
 
 import styles from './Selector.module.css';
 
-type Option<T> = {
+interface Option<T> {
     label: string;
     value: T;
-};
+}
 
-type DefaultOptionComponentProps<T> = {
+interface DefaultOptionComponentProps<T> {
     option: Option<T>;
-};
+}
 
 interface SelectorProps<T> {
     options: Option<T>[];
@@ -20,7 +20,7 @@ interface SelectorProps<T> {
     onChange: (value: T) => void;
     OptionComponent?: ComponentType<DefaultOptionComponentProps<T>>;
     placeholder?: string;
-    mode?: 'small' | 'large';
+    size?: 'small' | 'large';
 }
 
 const DefaultOptionComponent = <T,>({ option }: DefaultOptionComponentProps<T>) => {
@@ -31,7 +31,7 @@ export const Selector = <T,>({
     options,
     placeholder,
     value,
-    mode = 'large',
+    size = 'large',
     onChange,
     OptionComponent = DefaultOptionComponent,
 }: SelectorProps<T>) => {
@@ -52,9 +52,9 @@ export const Selector = <T,>({
         onChange(newValue);
     };
 
-    const handleSelectorKeyDown = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
+    const handleSelectorKeyDown = (event: React.KeyboardEvent) => {
+        event.preventDefault();
+        if (event.key === 'Enter' || event.key === ' ') {
             if (!isOpen) {
                 setIsOpen(true);
                 const selectedIndex = options.findIndex((o) => o.value === value);
@@ -64,12 +64,11 @@ export const Selector = <T,>({
                 setFocusedIndex(-1);
             }
         }
-        if (e.key === 'Escape') {
+        if (event.key === 'Escape') {
             setIsOpen(false);
             setFocusedIndex(-1);
         }
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
+        if (event.key === 'ArrowDown') {
             if (!isOpen) {
                 setIsOpen(true);
                 setFocusedIndex(0);
@@ -77,30 +76,27 @@ export const Selector = <T,>({
                 setFocusedIndex((prev) => Math.min(prev + 1, options.length - 1));
             }
         }
-        if (e.key === 'ArrowUp') {
-            e.preventDefault();
+        if (event.key === 'ArrowUp') {
             if (isOpen) {
                 setFocusedIndex((prev) => Math.max(prev - 1, 0));
             }
         }
     };
 
-    const handleOptionKeyDown = (e: React.KeyboardEvent, optionValue: T) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
+    const handleOptionKeyDown = (event: React.KeyboardEvent, optionValue: T) => {
+        event.preventDefault();
+        if (event.key === 'Enter' || event.key === ' ') {
             handleOptionClick(optionValue);
         }
-        if (e.key === 'Escape') {
+        if (event.key === 'Escape') {
             setIsOpen(false);
             setFocusedIndex(-1);
             triggerRef.current?.focus();
         }
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
+        if (event.key === 'ArrowDown') {
             setFocusedIndex((prev) => Math.min(prev + 1, options.length - 1));
         }
-        if (e.key === 'ArrowUp') {
-            e.preventDefault();
+        if (event.key === 'ArrowUp') {
             setFocusedIndex((prev) => Math.max(prev - 1, 0));
         }
     };
@@ -123,7 +119,7 @@ export const Selector = <T,>({
     }, [isOpen]);
 
     return (
-        <div className={clsx(styles.wrapper, styles[mode])} ref={wrapperRef}>
+        <div className={clsx(styles.wrapper, styles[size])} ref={wrapperRef}>
             <div
                 className={styles.selector}
                 role='combobox'
@@ -136,7 +132,7 @@ export const Selector = <T,>({
             >
                 <>
                     {selectedOption?.label ? <OptionComponent option={selectedOption} /> : placeholder}
-                    <IconDropDown className={styles.arrow} data-open={isOpen} data-size={mode} aria-hidden='true' />
+                    <IconDropDown className={styles.arrow} data-open={isOpen} data-size={size} aria-hidden='true' />
                 </>
             </div>
             {isOpen && (

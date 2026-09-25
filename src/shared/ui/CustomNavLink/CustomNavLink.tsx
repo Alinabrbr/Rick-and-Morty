@@ -8,13 +8,7 @@ interface CustomNavLinkProps extends React.ComponentPropsWithoutRef<typeof Link>
     textClassName?: string;
 }
 
-export const CustomNavLink = ({
-    icon,
-    children,
-    className,
-    textClassName = 'text_karla_bold_size-lg',
-    ...rest
-}: CustomNavLinkProps) => {
+export const CustomNavLink = ({ icon, children, className, textClassName, ...rest }: CustomNavLinkProps) => {
     return (
         <Link className={clsx(styles.navLink, className)} {...rest}>
             {icon}
