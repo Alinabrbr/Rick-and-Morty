@@ -1,3 +1,5 @@
 export * from './Button/Button';
+export * from './CustomNavLink/CustomNavLink';
 export * from './Loader/Loader';
-export * from './NavLink/NavLink';
+export * from './Selector/Selector';
+export * from './StatusIndicator/StatusIndicator';

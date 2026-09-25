@@ -6,6 +6,7 @@ import tsEslint from 'typescript-eslint';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import cssModules from 'eslint-plugin-css-modules';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
@@ -19,6 +20,7 @@ export default defineConfig([
         plugins: {
             prettier: eslintPluginPrettier,
             'simple-import-sort': simpleImportSort,
+            'css-modules': cssModules,
         },
         extends: [
             js.configs.recommended,
@@ -74,6 +76,7 @@ export default defineConfig([
             'arrow-spacing': 'error',
             'prefer-const': 'error',
             'no-var': 'error',
+            'css-modules/no-undef-class': 'error',
             'prefer-destructuring': [
                 'warn',
                 {
