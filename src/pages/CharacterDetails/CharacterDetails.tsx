@@ -1,6 +1,5 @@
-import clsx from 'clsx';
-
 import { IconArrowLeft } from '@/assets';
+import { customClassNames } from '@/shared/helpers';
 import { CustomNavLink, Loader } from '@/shared/ui';
 
 import styles from './CharacterDetails.module.css';
@@ -11,9 +10,8 @@ export const CharacterDetails = () => {
             <div className={styles.linkContainer}>
                 <CustomNavLink
                     to='/'
-                    rel='noreferrer'
                     icon={<IconArrowLeft />}
-                    textClassName={clsx(styles.linkText, 'text_karla_bold_size-lg')}
+                    textClassName={customClassNames(styles.linkText, 'text_karla_bold_size-lg')}
                 >
                     go back
                 </CustomNavLink>

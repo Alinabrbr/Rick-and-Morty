@@ -1,10 +1,10 @@
-import clsx from 'clsx';
+import { customClassNames } from '@/shared/helpers';
 
 import styles from './Footer.module.css';
 
 export const Footer = () => {
     return (
-        <footer className={clsx(styles.footer, 'text_karla_bold_size-lg')}>
+        <footer className={customClassNames(styles.footer, 'text_karla_bold_size-lg')}>
             <span>
                 Made with love by{' '}
                 <a className={styles.link} href='https://t.me/Alinabrbr' target='_blank' rel='noopener noreferrer'>
