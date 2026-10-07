@@ -12,12 +12,24 @@
     color: var(--text-color-dark);
 }
 
-.navLink:hover {
-    padding: 10px;
-    box-shadow:
-        /* зелёная дымка #9CFD87 */
-        0 0 8px rgba(156, 253, 135, 0.9),
-        0 0 18px rgba(156, 253, 135, 0.8),
-        0 0 32px rgba(156, 253, 135, 0.7),
-        0 0 52px rgba(156, 253, 135, 0.6);
+@media (hover: hover) {
+    .hovered:hover {
+        padding: 10px;
+        box-shadow:
+            /* зелёная дымка #9CFD87 */
+            0 0 8px rgba(var(--glow-color-rgb), 0.9),
+            0 0 18px rgba(var(--glow-color-rgb), 0.8),
+            0 0 32px rgba(var(--glow-color-rgb), 0.7),
+            0 0 52px rgba(var(--glow-color-rgb), 0.6);
+    }
 }
+
+/*.navLink:hover {*/
+/*    padding: 10px;*/
+/*    box-shadow:*/
+/*        !* зелёная дымка #9CFD87 *!*/
+/*        0 0 8px rgba(156, 253, 135, 0.9),*/
+/*        0 0 18px rgba(156, 253, 135, 0.8),*/
+/*        0 0 32px rgba(156, 253, 135, 0.7),*/
+/*        0 0 52px rgba(156, 253, 135, 0.6);*/
+/*}*/

@@ -1,6 +1,5 @@
-import clsx from 'clsx';
-
 import { LoadingImage } from '@/assets';
+import { customClassNames } from '@/shared/helpers';
 
 import { LoaderDefaultText } from './Loader.constants';
 
@@ -8,15 +7,15 @@ import styles from './Loader.module.css';
 
 interface LoaderProps {
     text?: string;
-    size?: 'small' | 'large';
+    mode?: 'small' | 'large';
     textClassName?: string;
 }
 
-export const Loader = ({ text, size = 'large', textClassName }: LoaderProps) => {
+export const Loader = ({ text, mode = 'large', textClassName }: LoaderProps) => {
     return (
-        <div className={clsx(styles.loaderContainer, styles[size])}>
+        <div className={customClassNames(styles.loaderContainer, styles[mode])}>
             <img className={styles.loaderImage} src={LoadingImage} alt='Loading animation' />
-            <p className={clsx(styles.text, textClassName)}>{text ?? LoaderDefaultText}</p>
+            <p className={customClassNames(styles.text, textClassName)}>{text ?? LoaderDefaultText}</p>
         </div>
     );
 };

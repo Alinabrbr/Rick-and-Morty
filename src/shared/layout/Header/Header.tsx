@@ -6,12 +6,17 @@ import styles from './Header.module.css';
 export const Header = () => {
     return (
         <header className={styles.header}>
-            <CustomNavLink to='/' aria-label='Rick and Morty — home' textClassName='text_karla_bold_size-lg'>
+            <CustomNavLink
+                to='/'
+                aria-label='Rick and Morty — home'
+                textClassName='text_karla_bold_size-lg'
+                isHover={false}
+            >
                 <IconLogo aria-hidden='true' />
             </CustomNavLink>
             <div>
-                <button>Theme</button>
-                <button>РУ</button>
+                <button type='button'>Theme</button>
+                <button type='button'>РУ</button>
             </div>
         </header>
     );
