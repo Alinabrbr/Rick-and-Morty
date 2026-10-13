@@ -1,0 +1,53 @@
+.inputContainer {
+    position: relative;
+    cursor: text;
+    width: 100%;
+}
+
+.iconContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    pointer-events: none;
+    display: flex;
+}
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &.bordered {
+        border-radius: 8px;
+        border: 1px solid var(--border-color-subtle);
+        padding: 16px 26px 16px 48px;
+
+        &:focus-visible {
+            border-color: transparent;
+            outline: 1px solid var(--service-color-success);
+        }
+    }
+
+    &.underlined {
+        border: none;
+        border-bottom: 1px solid var(--border-color-subtle);
+        padding: 6px 26px 6px 0;
+
+        &:focus-visible {
+            outline: none;
+            border-bottom: 1px solid var(--service-color-success);
+        }
+    }
+}
+
+.button {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    cursor: pointer;
+}

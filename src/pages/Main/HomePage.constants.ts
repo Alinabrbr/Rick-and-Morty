@@ -12,7 +12,10 @@ export const OptionsStatus = [
     { label: 'Unknown', value: '300' },
 ];
 
-export const PlaceholderSpecies = 'Species';
-export const PlaceholderStatus = 'Status';
+export const PlaceholderSelectorSpecies = 'Species';
+export const PlaceholderSelectorStatus = 'Status';
+
+export const PlaceholderInputSearch = 'Filter by name...';
+export const PlaceholderInputForm = 'Enter name...';
 
 export const TextLoader = 'Loading characters...';

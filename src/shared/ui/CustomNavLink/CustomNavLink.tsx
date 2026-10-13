@@ -1,18 +1,27 @@
 import { Link } from 'react-router-dom';
-import clsx from 'clsx';
+
+import { customClassNames } from '@/shared/helpers';
 
 import styles from './CustomNavLink.module.css';
 
 interface CustomNavLinkProps extends React.ComponentPropsWithoutRef<typeof Link> {
     icon?: React.ReactNode;
     textClassName?: string;
+    isHover?: boolean;
 }
 
-export const CustomNavLink = ({ icon, children, className, textClassName, ...rest }: CustomNavLinkProps) => {
+export const CustomNavLink = ({
+    icon,
+    children,
+    className,
+    textClassName,
+    isHover = true,
+    ...rest
+}: CustomNavLinkProps) => {
     return (
-        <Link className={clsx(styles.navLink, className)} {...rest}>
+        <Link className={customClassNames(styles.navLink, { [styles.hovered]: isHover }, className)} {...rest}>
             {icon}
-            <span className={textClassName}>{children}</span>
+            {children && <span className={textClassName}>{children}</span>}
         </Link>
     );
 };

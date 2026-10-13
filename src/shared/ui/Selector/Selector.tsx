@@ -1,7 +1,7 @@
 import { type ComponentType, useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
 
 import { IconDropDown } from '@/assets';
+import { customClassNames } from '@/shared/helpers';
 
 import styles from './Selector.module.css';
 
@@ -57,7 +57,7 @@ export const Selector = <T,>({
         if (event.key === 'Enter' || event.key === ' ') {
             if (!isOpen) {
                 setIsOpen(true);
-                const selectedIndex = options.findIndex((o) => o.value === value);
+                const selectedIndex = options.findIndex((option) => option.value === value);
                 setFocusedIndex(selectedIndex >= 0 ? selectedIndex : 0);
             } else {
                 setIsOpen(false);
@@ -119,7 +119,7 @@ export const Selector = <T,>({
     }, [isOpen]);
 
     return (
-        <div className={clsx(styles.wrapper, styles[size])} ref={wrapperRef}>
+        <div className={customClassNames(styles.wrapper, styles[size])} ref={wrapperRef}>
             <div
                 className={styles.selector}
                 role='combobox'
@@ -130,10 +130,8 @@ export const Selector = <T,>({
                 onClick={handleSelectClick}
                 onKeyDown={handleSelectorKeyDown}
             >
-                <>
-                    {selectedOption?.label ? <OptionComponent option={selectedOption} /> : placeholder}
-                    <IconDropDown className={styles.arrow} data-open={isOpen} data-size={size} aria-hidden='true' />
-                </>
+                {selectedOption?.label ? <OptionComponent option={selectedOption} /> : placeholder}
+                <IconDropDown className={styles.arrow} data-open={isOpen} data-size={size} aria-hidden='true' />
             </div>
             {isOpen && (
                 <ul className={styles.dropdown} role='listbox'>
@@ -148,7 +146,7 @@ export const Selector = <T,>({
                             aria-selected={option.value === value}
                             tabIndex={-1}
                             onClick={() => handleOptionClick(option.value)}
-                            onKeyDown={(e) => handleOptionKeyDown(e, option.value)}
+                            onKeyDown={(event) => handleOptionKeyDown(event, option.value)}
                         >
                             <OptionComponent option={option} />
                         </li>

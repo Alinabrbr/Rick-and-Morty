@@ -17,6 +17,18 @@
     --service-color-error: #f20f01;
     --service-color-success: #0fdb5a;
 
+    --text-color-placeholder: #00000099;
+
+    --border-color-default: #393939;
+    --border-color-subtle: #00000080;
+
+    --option-hover-color: rgba(0, 0, 0, 0.05);
+    --shadow-color: #0000001a;
+    --glow-color-rgb: 156, 253, 135;
+
+    --link-color-accent: #00b0c8;
+    --link-color-accent-dark: #003d46;
+
     --font-roboto: 'Roboto', Arial, sans-serif;
     --font-poppins: 'Poppins', Arial, sans-serif;
     --font-karla: 'Karla', Arial, sans-serif;
