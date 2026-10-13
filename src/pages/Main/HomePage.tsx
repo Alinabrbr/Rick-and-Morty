@@ -2,17 +2,17 @@ import { useState } from 'react';
 
 import { BigLogo, IconSearch } from '@/assets';
 import { Loader, Selector, StatusIndicator } from '@/shared/ui';
-import { CustomTextInput } from '@/shared/ui/CustomTextInput/CustomTextInput';
+import { TextInput } from '@/shared/ui';
 
 import {
-    OptionsSpecies,
-    OptionsStatus,
-    PlaceholderInputForm,
-    PlaceholderInputSearch,
-    PlaceholderSelectorSpecies,
-    PlaceholderSelectorStatus,
-    TextLoader,
-} from './HomePage.constants';
+    LOADER_TEXT,
+    OPTIONS_SPECIES,
+    OPTIONS_STATUS,
+    PLACEHOLDER_FORM_INPUT,
+    PLACEHOLDER_SEARCH_INPUT,
+    PLACEHOLDER_SPECIES_SELECTOR,
+    PLACEHOLDER_STATUS_SELECTOR,
+} from './constants';
 
 import styles from './HomePage.module.css';
 
@@ -25,14 +25,14 @@ export const HomePage = () => {
     return (
         <section className={styles.pageContainer}>
             <img className={styles.logo} src={BigLogo} alt='Logo Rick and Morty' />
-            <Loader text={TextLoader} textClassName='text_karla_bold_size-lg' />
+            <Loader text={LOADER_TEXT} className='text_karla_bold_size-lg' />
             <div className={styles.contentContainer}>
-                <CustomTextInput
+                <TextInput
                     id='name'
                     variant='bordered'
                     icon={<IconSearch />}
-                    placeholder={PlaceholderInputSearch}
-                    textStyle='text_roboto_regular_size-md'
+                    placeholder={PLACEHOLDER_SEARCH_INPUT}
+                    className='text_roboto_regular_size-md'
                     iconClearSize='9px'
                     value={searchValue}
                     aria-label='Search characters'
@@ -40,30 +40,30 @@ export const HomePage = () => {
                     onClear={() => setSearchValue('')}
                     containerClassName={styles.inputContainerMedium}
                 />
-                <CustomTextInput
+                <TextInput
                     id='search-input'
                     variant='underlined'
-                    placeholder={PlaceholderInputForm}
-                    textStyle='text_roboto_regular_size-md'
+                    placeholder={PLACEHOLDER_FORM_INPUT}
+                    className='text_roboto_regular_size-md'
                     iconClearSize='8px'
                     value={formValue}
-                    aria-label='Enter namee'
+                    aria-label='Enter name'
                     onChange={(event) => setFormValue(event.target.value)}
                     onClear={() => setFormValue('')}
                     containerClassName={styles.inputContainerSmall}
                 />
 
                 <Selector
-                    options={OptionsSpecies}
-                    placeholder={PlaceholderSelectorSpecies}
+                    options={OPTIONS_SPECIES}
+                    placeholder={PLACEHOLDER_SPECIES_SELECTOR}
                     size='large'
                     onChange={setSpecies}
                     value={species}
                 />
 
                 <Selector
-                    options={OptionsStatus}
-                    placeholder={PlaceholderSelectorStatus}
+                    options={OPTIONS_STATUS}
+                    placeholder={PLACEHOLDER_STATUS_SELECTOR}
                     size='large'
                     onChange={setStatus}
                     value={status}

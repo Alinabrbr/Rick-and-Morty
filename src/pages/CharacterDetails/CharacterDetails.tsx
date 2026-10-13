@@ -1,6 +1,6 @@
 import { IconArrowLeft } from '@/assets';
-import { customClassNames } from '@/shared/helpers';
-import { CustomNavLink, Loader } from '@/shared/ui';
+import { classNames } from '@/shared/helpers';
+import { Loader, NavLink } from '@/shared/ui';
 
 import styles from './CharacterDetails.module.css';
 
@@ -8,15 +8,15 @@ export const CharacterDetails = () => {
     return (
         <section className={styles.pageContainer}>
             <div className={styles.linkContainer}>
-                <CustomNavLink
+                <NavLink
                     to='/'
                     icon={<IconArrowLeft />}
-                    textClassName={customClassNames(styles.linkText, 'text_karla_bold_size-lg')}
+                    className={classNames(styles.linkText, 'text_karla_bold_size-lg')}
                 >
                     go back
-                </CustomNavLink>
+                </NavLink>
             </div>
-            <Loader text='Loading character card...' textClassName='text_karla_bold_size-lg' />
+            <Loader text='Loading character card...' className='text_karla_bold_size-lg' />
         </section>
     );
 };

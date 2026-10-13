@@ -1,21 +1,21 @@
 import { LoadingImage } from '@/assets';
-import { customClassNames } from '@/shared/helpers';
+import { classNames } from '@/shared/helpers';
 
-import { LoaderDefaultText } from './Loader.constants';
+import { LOADER_DEFAULT_TEXT } from './constants';
 
 import styles from './Loader.module.css';
 
 interface LoaderProps {
     text?: string;
     mode?: 'small' | 'large';
-    textClassName?: string;
+    className?: string;
 }
 
-export const Loader = ({ text, mode = 'large', textClassName }: LoaderProps) => {
+export const Loader = ({ text, mode = 'large', className }: LoaderProps) => {
     return (
-        <div className={customClassNames(styles.loaderContainer, styles[mode])}>
+        <div className={classNames(styles.loaderContainer, styles[mode])}>
             <img className={styles.loaderImage} src={LoadingImage} alt='Loading animation' />
-            <p className={customClassNames(styles.text, textClassName)}>{text ?? LoaderDefaultText}</p>
+            <p className={classNames(styles.text, className)}>{text ?? LOADER_DEFAULT_TEXT}</p>
         </div>
     );
 };

@@ -1,34 +1,25 @@
-import { customClassNames } from '@/shared/helpers';
+import { classNames } from '@/shared/helpers';
 
 import styles from './Button.module.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: React.ReactNode;
     mode?: 'default' | 'icon';
-    textClassName?: string;
-    isHover?: boolean;
+    hoverable?: boolean;
 }
 
-export const Button = ({
-    icon,
-    children,
-    className,
-    textClassName,
-    mode = 'default',
-    isHover = true,
-    ...rest
-}: ButtonProps) => {
+export const Button = ({ icon, children, className, mode = 'default', hoverable = true, ...rest }: ButtonProps) => {
     return (
         <button
-            className={customClassNames(
+            className={classNames(
                 styles.button,
-                { [styles.icon]: mode === 'icon', [styles.hoverable]: isHover },
+                { [styles.icon]: mode === 'icon', [styles.hoverable]: hoverable },
                 className,
             )}
             {...rest}
         >
             {icon}
-            {children && <span className={textClassName}>{children}</span>}
+            {children && <span>{children}</span>}
         </button>
     );
 };

@@ -1,19 +1,14 @@
 import { IconLogo } from '@/assets';
-import { CustomNavLink } from '@/shared/ui';
+import { NavLink } from '@/shared/ui';
 
 import styles from './Header.module.css';
 
 export const Header = () => {
     return (
         <header className={styles.header}>
-            <CustomNavLink
-                to='/'
-                aria-label='Rick and Morty — home'
-                textClassName='text_karla_bold_size-lg'
-                isHover={false}
-            >
+            <NavLink to='/' aria-label='Rick and Morty — home' className='text_karla_bold_size-lg' hoverable={false}>
                 <IconLogo aria-hidden='true' />
-            </CustomNavLink>
+            </NavLink>
             <div>
                 <button type='button'>Theme</button>
                 <button type='button'>РУ</button>

@@ -1,9 +1,4 @@
-import {
-    STATUS_COLOR,
-    STATUS_INDICATOR_SIZE,
-    type StatusIndicatorSize,
-    type StatusIndicatorStatus,
-} from './StatusIndicator.constants';
+import { STATUS_COLOR, STATUS_INDICATOR_SIZE, type StatusIndicatorSize, type StatusIndicatorStatus } from './constants';
 
 import styles from './StatusIndicator.module.css';
 
