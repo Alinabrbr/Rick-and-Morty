@@ -1,6 +1,6 @@
-type CustomClassNamesArg = string | undefined | Record<string, boolean>;
+type ClassNamesArg = string | undefined | Record<string, boolean>;
 
-export const customClassNames = (...args: CustomClassNamesArg[]): string => {
+export const classNames = (...args: ClassNamesArg[]): string => {
     const result: string[] = [];
     for (const arg of args) {
         if (typeof arg === 'string') {

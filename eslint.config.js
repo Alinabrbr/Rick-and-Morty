@@ -60,6 +60,7 @@ export default defineConfig([
                 'error',
                 'single',
                 {
+                    avoidEscape: true,
                     allowTemplateLiterals: true,
                 },
             ],
