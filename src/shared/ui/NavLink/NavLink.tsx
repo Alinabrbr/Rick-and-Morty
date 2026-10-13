@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, type LinkProps } from 'react-router-dom';
 
 import { classNames } from '@/shared/helpers';
 
 import styles from './NavLink.module.css';
 
-interface NavLinkProps extends React.ComponentPropsWithoutRef<typeof Link> {
+interface NavLinkProps extends LinkProps {
     icon?: React.ReactNode;
     hoverable?: boolean;
 }
