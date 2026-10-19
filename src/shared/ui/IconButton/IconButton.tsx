@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/helpers';
 
-import styles from './IconButton.module.css';
+import styles from './IconButton.module.scss';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: React.ReactNode;

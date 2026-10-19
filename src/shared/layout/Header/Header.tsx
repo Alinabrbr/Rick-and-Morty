@@ -1,7 +1,7 @@
 import { IconLogo } from '@/assets';
 import { NavLink } from '@/shared/ui';
 
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 
 export const Header = () => {
     return (

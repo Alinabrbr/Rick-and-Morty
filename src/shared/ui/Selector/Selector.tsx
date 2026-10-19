@@ -3,7 +3,7 @@ import { type ComponentType, useEffect, useRef, useState } from 'react';
 import { IconDropDown } from '@/assets';
 import { classNames } from '@/shared/helpers';
 
-import styles from './Selector.module.css';
+import styles from './Selector.module.scss';
 
 interface Option<T> {
     label: string;

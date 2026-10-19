@@ -3,7 +3,7 @@ import { classNames } from '@/shared/helpers';
 
 import { LOADER_DEFAULT_TEXT } from './constants';
 
-import styles from './Loader.module.css';
+import styles from './Loader.module.scss';
 
 interface LoaderProps {
     text?: string;

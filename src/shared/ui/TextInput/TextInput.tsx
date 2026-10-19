@@ -4,7 +4,7 @@ import { IconClose } from '@/assets';
 import { classNames } from '@/shared/helpers';
 import { Button } from '@/shared/ui';
 
-import styles from './TextInput.module.css';
+import styles from './TextInput.module.scss';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
     variant: 'bordered' | 'underlined';

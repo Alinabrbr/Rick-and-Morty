@@ -7,7 +7,7 @@ import { CharacterCard } from '@/widgets';
 
 import { LOADER_TEXT } from './constants';
 
-import styles from './HomePage.module.css';
+import styles from './HomePage.module.scss';
 
 export const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);

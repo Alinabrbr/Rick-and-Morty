@@ -2,7 +2,7 @@ import { IconArrowLeft } from '@/assets';
 import { classNames } from '@/shared/helpers';
 import { Loader, NavLink } from '@/shared/ui';
 
-import styles from './CharacterDetails.module.css';
+import styles from './CharacterDetails.module.scss';
 
 export const CharacterDetails = () => {
     return (

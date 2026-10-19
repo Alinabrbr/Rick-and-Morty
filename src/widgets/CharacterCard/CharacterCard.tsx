@@ -8,7 +8,7 @@ import { IconButton, Selector, StatusIndicator, TextInput } from '@/shared/ui';
 
 import { CHARACTER_CARD_LABEL_INPUTS, STATUS_OPTIONS } from './constants.ts';
 
-import styles from './CharacterCard.module.css';
+import styles from './CharacterCard.module.scss';
 
 interface StatusOptionProps {
     option: { label: string; value: Status };

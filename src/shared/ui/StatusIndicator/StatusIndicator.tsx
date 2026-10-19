@@ -1,6 +1,6 @@
 import { STATUS_COLOR, STATUS_INDICATOR_SIZE, type StatusIndicatorSize, type StatusIndicatorStatus } from './constants';
 
-import styles from './StatusIndicator.module.css';
+import styles from './StatusIndicator.module.scss';
 
 interface StatusIndicatorProps {
     size?: StatusIndicatorSize;

@@ -2,7 +2,7 @@ import { Link, type LinkProps } from 'react-router-dom';
 
 import { classNames } from '@/shared/helpers';
 
-import styles from './NavLink.module.css';
+import styles from './NavLink.module.scss';
 
 interface NavLinkProps extends LinkProps {
     icon?: React.ReactNode;

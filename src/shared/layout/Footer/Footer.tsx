@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/helpers';
 
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 
 export const Footer = () => {
     return (
