@@ -1,20 +1,21 @@
 .containerCard {
     position: relative;
-    width: 508px;
-    height: 248px;
     display: flex;
     flex-direction: row;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
-    padding: 7px;
     gap: 14px;
+    width: 508px;
+    height: 248px;
+    padding: 7px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-card);
+    cursor: default;
 }
 
 .image {
+    flex-shrink: 0;
     width: 240px;
     height: 234px;
-    border-radius: 8px;
-    flex-shrink: 0;
+    border-radius: var(--border-radius-md);
 }
 
 .cardInfo {
@@ -25,7 +26,7 @@
 }
 
 .input {
-    color: #00000099;
+    color: var(--text-color-placeholder);
 }
 
 .containerInput {
@@ -36,8 +37,7 @@
 
 .textBlock {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-flow: column nowrap;
     gap: 7px;
 
     &:last-of-type {
@@ -46,7 +46,7 @@
 }
 
 .textLink {
-    color: #00b0c8;
+    color: var(--link-color-accent);
     text-decoration: none;
 }
 
@@ -55,18 +55,18 @@
 }
 
 .text {
-    color: #00000099;
+    color: var(--text-color-placeholder);
 }
 
 .textLabel {
-    color: #3f3f3f;
+    color: var(--text-color-label);
 }
 
 .textWithIcon {
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 5px;
+    align-items: center;
     min-height: 21px;
 }
 
@@ -88,8 +88,8 @@
 .optionComponentWrapper {
     display: flex;
     flex-wrap: nowrap;
-    align-items: center;
     gap: 5px;
+    align-items: center;
 }
 
 .containerIcon {

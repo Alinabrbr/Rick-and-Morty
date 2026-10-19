@@ -4,14 +4,11 @@ import styles from './StatusIndicator.module.scss';
 
 interface StatusIndicatorProps {
     size?: StatusIndicatorSize;
-    status?: string;
+    status?: StatusIndicatorStatus;
 }
 
-const isValidStatus = (status: string): status is StatusIndicatorStatus => status in STATUS_COLOR;
-
-export const StatusIndicator = ({ status = 'alive', size = 'small' }: StatusIndicatorProps) => {
-    const lowerStatus = status.toLowerCase();
-    const backgroundColor = isValidStatus(lowerStatus) ? STATUS_COLOR[lowerStatus] : STATUS_COLOR.alive;
+export const StatusIndicator = ({ status = 'Alive', size = 'small' }: StatusIndicatorProps) => {
+    const backgroundColor = STATUS_COLOR[status];
 
     return (
         <div

@@ -1,29 +1,28 @@
 .button {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     gap: 12px;
-    border: none;
-    background-color: transparent;
-    border-radius: 16px;
+    align-items: center;
     height: 26px;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border-radius-lg);
     transition: box-shadow 0.25s ease;
 }
 
 .icon {
+    gap: 0;
     height: fit-content;
     padding: 0;
-    gap: 0;
 }
 
 @media (hover: hover) {
     .hoverable:hover {
         box-shadow:
             /* зелёная дымка #9CFD87 */
-            0 0 8px rgba(var(--glow-color-rgb), 0.9),
-            0 0 18px rgba(var(--glow-color-rgb), 0.8),
-            0 0 32px rgba(var(--glow-color-rgb), 0.7),
-            0 0 52px rgba(var(--glow-color-rgb), 0.6);
+            0 0 8px rgb(var(--glow-color-rgb), 0.9),
+            0 0 18px rgb(var(--glow-color-rgb), 0.8),
+            0 0 32px rgb(var(--glow-color-rgb), 0.7),
+            0 0 52px rgb(var(--glow-color-rgb), 0.6);
     }
 }

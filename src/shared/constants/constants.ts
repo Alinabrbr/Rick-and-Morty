@@ -1,4 +1,4 @@
-import type { Character } from '@/shared/types/type.ts';
+import type { Character } from '@/shared/types/type';
 
 export const CHARACTER_MOCK: Character[] = [
     {

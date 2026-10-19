@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 import { IconCheck, IconClose, IconEdit } from '@/assets';
 import { classNames } from '@/shared/helpers';
-import type { Character, Status } from '@/shared/types/type.ts';
+import type { Character, Status } from '@/shared/types/type';
 import { IconButton, Selector, StatusIndicator, TextInput } from '@/shared/ui';
 
-import { CHARACTER_CARD_LABEL_INPUTS, STATUS_OPTIONS } from './constants.ts';
+import { CHARACTER_CARD_LABEL_INPUTS, STATUS_OPTIONS } from './constants';
 
 import styles from './CharacterCard.module.scss';
 
@@ -104,7 +104,7 @@ export const CharacterCard = ({ card }: CharacterCardProps) => {
                 ) : (
                     <>
                         <Link
-                            to={`/details/:${card.id}`}
+                            to={`/details/${card.id}`}
                             className={classNames(styles.textLink, styles.textWithBorder, 'text_roboto_medium_size-xl')}
                         >
                             {name}

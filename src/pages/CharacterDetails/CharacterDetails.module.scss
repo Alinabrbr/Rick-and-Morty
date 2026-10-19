@@ -1,9 +1,9 @@
 .pageContainer {
-    padding-inline: 210px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding-inline: var(--layout-padding-inline);
 }
 
 .linkContainer {

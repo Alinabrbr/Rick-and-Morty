@@ -4,40 +4,40 @@
 }
 
 .label {
-    color: #3f3f3f;
+    color: var(--text-color-label);
 }
 
 .iconContainer {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     left: 20px;
-    pointer-events: none;
     display: flex;
+    pointer-events: none;
+    transform: translateY(-50%);
 }
 
 .input {
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
 
     &.bordered {
-        border-radius: 8px;
-        border: 1px solid var(--border-color-subtle);
         padding: 16px 26px 16px 48px;
+        border: 1px solid var(--border-color-subtle);
+        border-radius: var(--border-radius-md);
 
         &:focus-visible {
-            border-color: transparent;
             outline: 1px solid var(--service-color-success);
+            border-color: transparent;
         }
     }
 
     &.underlined {
+        padding: 0 26px 0 0;
         border: none;
         border-bottom: 1px solid var(--border-color-subtle);
-        padding: 0 26px 0 0;
 
         &:focus-visible {
             outline: none;
@@ -47,10 +47,10 @@
 }
 
 .button {
-    box-sizing: border-box;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     right: 12px;
+    box-sizing: border-box;
     cursor: pointer;
+    transform: translateY(-50%);
 }

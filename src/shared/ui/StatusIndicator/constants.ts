@@ -1,7 +1,7 @@
 export const STATUS_COLOR = {
-    alive: '#22c55e', // зелёный
-    dead: '#eab308', // жёлтый
-    unknown: '#ef4444', // красный
+    Alive: '#22c55e',
+    Dead: '#eab308',
+    Unknown: '#ef4444',
 } as const;
 
 export const STATUS_INDICATOR_SIZE = {

@@ -1,18 +1,18 @@
 .footer {
-    width: 100%;
-    margin-top: auto;
-    padding-inline: 210px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60px;
-    box-shadow: -2px 0 8px 2px var(--shadow-color);
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60px;
+    padding-inline: var(--layout-padding-inline);
+    margin-top: auto;
+    box-shadow: -2px 0 8px 2px var(--shadow-color);
 }
 
 .link {
-    text-decoration: none;
     color: var(--link-color-accent); /* Цвет внутри текста */
+    text-decoration: none;
     text-shadow: /* Обводка текста */
         0.5px 0 var(--link-color-accent-dark),
         -0.5px 0 var(--link-color-accent-dark),
@@ -27,8 +27,8 @@
         -0.5px 0 var(--link-color-accent-dark),
         0 0.5px var(--link-color-accent-dark),
         0 -0.5px var(--link-color-accent-dark),
-        /* зелёная дымка */ 0 0 8px rgba(var(--glow-color-rgb), 0.9),
-        0 0 18px rgba(var(--glow-color-rgb), 0.8),
-        0 0 32px rgba(var(--glow-color-rgb), 0.7),
-        0 0 52px rgba(var(--glow-color-rgb), 0.6);
+        /* зелёная дымка */ 0 0 8px rgb(var(--glow-color-rgb), 0.9),
+        0 0 18px rgb(var(--glow-color-rgb), 0.8),
+        0 0 32px rgb(var(--glow-color-rgb), 0.7),
+        0 0 52px rgb(var(--glow-color-rgb), 0.6);
 }
