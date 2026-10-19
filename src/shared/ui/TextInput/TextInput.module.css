@@ -3,6 +3,10 @@
     width: 100%;
 }
 
+.label {
+    color: #3f3f3f;
+}
+
 .iconContainer {
     position: absolute;
     top: 50%;
@@ -33,7 +37,7 @@
     &.underlined {
         border: none;
         border-bottom: 1px solid var(--border-color-subtle);
-        padding: 6px 26px 6px 0;
+        padding: 0 26px 0 0;
 
         &:focus-visible {
             outline: none;

@@ -1,0 +1,111 @@
+.containerCard {
+    position: relative;
+    width: 508px;
+    height: 248px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding: 7px;
+    gap: 14px;
+}
+
+.image {
+    width: 240px;
+    height: 234px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 70px;
+}
+
+.input {
+    margin: 0;
+    color: #00000099;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.textBlock {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 7px;
+
+    &:last-of-type {
+        gap: 3px;
+    }
+}
+
+.textLink {
+    margin: 0;
+    color: #00b0c8;
+    text-decoration: none;
+}
+
+.textWithBorder {
+    border-bottom: 1px solid transparent;
+}
+
+.text {
+    margin: 0;
+    color: #00000099;
+}
+
+.textLabel {
+    color: #3f3f3f;
+}
+
+.textWithIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    min-height: 21px;
+}
+
+.inputWithLabel {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectorContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    & > :last-child {
+        margin-left: -6px;
+    }
+}
+
+.optionComponentWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 5px;
+}
+
+.containerIcon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}

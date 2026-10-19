@@ -18,9 +18,9 @@
 }
 
 .contentContainer {
-    width: 100%;
+    max-width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 28px;
     align-items: center;
 }

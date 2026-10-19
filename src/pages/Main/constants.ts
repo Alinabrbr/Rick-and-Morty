@@ -6,12 +6,6 @@ export const OPTIONS_SPECIES = [
     { label: 'Robot', value: '5' },
 ];
 
-export const OPTIONS_STATUS = [
-    { label: 'Alive', value: '100' },
-    { label: 'Dead', value: '200' },
-    { label: 'Unknown', value: '300' },
-];
-
 export const PLACEHOLDER_SPECIES_SELECTOR = 'Species';
 export const PLACEHOLDER_STATUS_SELECTOR = 'Status';
 

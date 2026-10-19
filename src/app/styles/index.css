@@ -89,6 +89,13 @@ body {
     font-weight: var(--font-weight-regular);
 }
 
+.text_roboto_medium_size-md {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-xs);
+    font-weight: var(--font-weight-medium);
+}
+
 .text_roboto_medium_size-xl {
     font-family: var(--font-roboto), sans-serif;
     font-size: var(--font-size-xl);

@@ -12,6 +12,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
     onClear?: () => void;
     containerClassName?: string;
     icon?: ReactNode;
+    label?: string;
 }
 
 export const TextInput = ({
@@ -22,10 +23,12 @@ export const TextInput = ({
     className,
     containerClassName,
     icon,
+    label,
     ...rest
 }: TextInputProps) => {
     return (
         <div className={classNames(styles.inputContainer, containerClassName)}>
+            {label && <label className={classNames(styles.label, 'text_roboto_medium_size-md')}>{label}</label>}
             {icon && <div className={styles.iconContainer}>{icon}</div>}
             <input className={classNames(styles.input, styles[variant], className)} value={value} {...rest} />
             {value && (
