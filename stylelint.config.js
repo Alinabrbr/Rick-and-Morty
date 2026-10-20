@@ -20,13 +20,4 @@ export default {
         // Имена шрифтов — proper nouns, оставляем как есть (Arial, Roboto)
         'value-keyword-case': ['lower', { ignoreKeywords: ['Arial', 'BlinkMacSystemFont'] }],
     },
-    overrides: [
-        {
-            // Глобальные утилитарные классы типографики используют другое соглашение
-            files: ['src/app/styles/index.scss'],
-            rules: {
-                'selector-class-pattern': null,
-            },
-        },
-    ],
 };

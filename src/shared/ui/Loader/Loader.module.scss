@@ -36,6 +36,8 @@
 }
 
 .large {
+    @include text-karla-bold-lg;
+
     width: 100%;
     height: 100%;
 }

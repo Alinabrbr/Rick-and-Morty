@@ -10,19 +10,8 @@
     transition: box-shadow 0.25s ease;
 }
 
-.icon {
-    gap: 0;
-    height: fit-content;
-    padding: 0;
-}
-
 @media (hover: hover) {
-    .hoverable:hover {
-        box-shadow:
-            /* зелёная дымка #9CFD87 */
-            0 0 8px rgb(var(--glow-color-rgb), 0.9),
-            0 0 18px rgb(var(--glow-color-rgb), 0.8),
-            0 0 32px rgb(var(--glow-color-rgb), 0.7),
-            0 0 52px rgb(var(--glow-color-rgb), 0.6);
+    .button:hover {
+        box-shadow: var(--glow-shadow);
     }
 }

@@ -12,6 +12,22 @@
     margin-bottom: 154px;
 }
 
-.linkText {
+.backLink {
+    @include text-karla-bold-lg;
+
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 26px;
+    padding: 10px;
+    color: var(--text-color-dark);
     text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--border-radius-lg);
+}
+
+@media (hover: hover) {
+    .backLink:hover {
+        box-shadow: var(--glow-shadow);
+    }
 }

@@ -1,4 +1,4 @@
-import { type ChangeEvent, useState } from 'react';
+import { type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import { IconCheck, IconClose, IconEdit } from '@/assets';
@@ -6,7 +6,8 @@ import { classNames } from '@/shared/helpers';
 import type { Character, Status } from '@/shared/types/type';
 import { IconButton, Selector, StatusIndicator, TextInput } from '@/shared/ui';
 
-import { CHARACTER_CARD_LABEL_INPUTS, STATUS_OPTIONS } from './constants';
+import { CHARACTER_FIELD_LABELS, STATUS_OPTIONS } from './constants';
+import { useCharacterEditor } from './useCharacterEditor';
 
 import styles from './CharacterCard.module.scss';
 
@@ -21,135 +22,102 @@ const StatusOption = ({ option }: StatusOptionProps) => (
     </div>
 );
 
-interface CharacterCardProps {
-    card: Character;
+interface CardFieldProps {
+    label: string;
+    children: ReactNode;
+    className?: string;
 }
 
-export const CharacterCard = ({ card }: CharacterCardProps) => {
-    const [isEditing, setIsEditing] = useState(false);
-    const [name, setName] = useState(card.name);
-    const [gender, setGender] = useState<string>(card.gender);
-    const [species, setSpecies] = useState<string>(card.species);
-    const [location, setLocation] = useState<string>(card.location);
-    const [status, setStatus] = useState<Status>(card.status);
-    const [isHoveredCard, setIsHoveredCard] = useState<boolean>(false);
+const CardField = ({ label, children, className }: CardFieldProps) => (
+    <div className={classNames(styles.textBlock, className)}>
+        <p className={styles.textLabel}>{label}</p>
+        {children}
+    </div>
+);
 
-    const handleEdit = () => setIsEditing(true);
-    const handleCancel = () => {
-        setName(card.name);
-        setGender(card.gender);
-        setSpecies(card.species);
-        setLocation(card.location);
-        setStatus(card.status);
-        setIsEditing(false);
-    };
-    const handleSave = () => setIsEditing(false);
+interface CharacterCardProps {
+    character: Character;
+    onSave: (character: Character) => void;
+}
+
+export const CharacterCard = ({ character, onSave }: CharacterCardProps) => {
+    const { draft, startEditing, cancelEditing, updateDraft, saveDraft } = useCharacterEditor(character, onSave);
+    const isEditing = draft !== null;
 
     return (
-        <div
-            className={styles.containerCard}
-            onMouseEnter={() => setIsHoveredCard(true)}
-            onMouseLeave={() => setIsHoveredCard(false)}
-        >
-            <img className={styles.image} alt='card image' src={card.image} />
+        <article className={styles.containerCard}>
+            <img className={styles.image} alt='' src={character.image} />
             <div className={styles.cardInfo}>
                 {isEditing ? (
+                    <TextInput
+                        value={draft.name}
+                        variant='underlined'
+                        onChange={(event) => updateDraft({ name: event.target.value })}
+                        onClear={() => updateDraft({ name: '' })}
+                        className={styles.textLink}
+                    />
+                ) : (
+                    <h2 className={styles.textWithBorder}>
+                        <Link to={`/details/${character.id}`} className={styles.textLink}>
+                            {character.name}
+                        </Link>
+                    </h2>
+                )}
+                <CardField label={CHARACTER_FIELD_LABELS.gender}>
+                    <p className={styles.text}>{character.gender}</p>
+                </CardField>
+                <CardField label={CHARACTER_FIELD_LABELS.species}>
+                    <p className={styles.text}>{character.species}</p>
+                </CardField>
+                {isEditing ? (
+                    <TextInput
+                        label={CHARACTER_FIELD_LABELS.location}
+                        value={draft.location}
+                        variant='underlined'
+                        onChange={(event) => updateDraft({ location: event.target.value })}
+                        onClear={() => updateDraft({ location: '' })}
+                        className={styles.input}
+                    />
+                ) : (
+                    <CardField label={CHARACTER_FIELD_LABELS.location}>
+                        <p className={classNames(styles.text, styles.textWithBorder)}>{character.location}</p>
+                    </CardField>
+                )}
+                <CardField
+                    label={CHARACTER_FIELD_LABELS.status}
+                    className={classNames(styles.statusBlock, { [styles.selectorContainer]: isEditing })}
+                >
+                    {isEditing ? (
+                        <Selector
+                            options={STATUS_OPTIONS}
+                            value={draft.status}
+                            onChange={(status) => updateDraft({ status })}
+                            size='small'
+                            OptionComponent={StatusOption}
+                        />
+                    ) : (
+                        <div className={styles.textWithIcon}>
+                            <p className={styles.text}>{character.status}</p>
+                            <StatusIndicator status={character.status} />
+                        </div>
+                    )}
+                </CardField>
+            </div>
+            <div className={styles.containerIcon}>
+                {isEditing ? (
                     <>
-                        <TextInput
-                            label={CHARACTER_CARD_LABEL_INPUTS.name}
-                            value={name}
-                            variant='underlined'
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setName(event.target.value)}
-                            onClear={() => setName('')}
-                            className={classNames(styles.input, styles.textLink, 'text_roboto_medium_size-xl')}
-                        />
-                        <div className={styles.textBlock}>
-                            <p className={classNames(styles.text, styles.textLabel, 'text_roboto_medium_size-md')}>
-                                {CHARACTER_CARD_LABEL_INPUTS.gender}
-                            </p>
-                            <p className={classNames(styles.text, 'text_roboto_regular_size-sm')}>{gender}</p>
-                        </div>
-                        <div className={styles.textBlock}>
-                            <p className={classNames(styles.text, styles.textLabel, 'text_roboto_medium_size-md')}>
-                                {CHARACTER_CARD_LABEL_INPUTS.species}
-                            </p>
-                            <p className={classNames(styles.text, 'text_roboto_regular_size-sm')}>{species}</p>
-                        </div>
-                        <TextInput
-                            label={CHARACTER_CARD_LABEL_INPUTS.location}
-                            value={location}
-                            variant='underlined'
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setLocation(event.target.value)}
-                            onClear={() => setLocation('')}
-                            className={classNames(styles.input, 'text_roboto_regular_size-sm')}
-                            containerClassName={styles.containerInput}
-                        />
-                        <div className={styles.selectorContainer}>
-                            <p className={classNames(styles.text, styles.textLabel, 'text_roboto_medium_size-md')}>
-                                {CHARACTER_CARD_LABEL_INPUTS.status}
-                            </p>
-                            <Selector
-                                options={STATUS_OPTIONS}
-                                value={status}
-                                onChange={setStatus}
-                                size='small'
-                                OptionComponent={StatusOption}
-                            />
-                        </div>
-                        <div className={styles.containerIcon}>
-                            <IconButton icon={<IconClose />} onClick={handleCancel} />
-                            <IconButton icon={<IconCheck />} onClick={handleSave} />
-                        </div>
+                        <IconButton icon={<IconClose />} onClick={cancelEditing} aria-label='Cancel editing' />
+                        <IconButton icon={<IconCheck />} onClick={saveDraft} aria-label='Save changes' />
                     </>
                 ) : (
-                    <>
-                        <Link
-                            to={`/details/${card.id}`}
-                            className={classNames(styles.textLink, styles.textWithBorder, 'text_roboto_medium_size-xl')}
-                        >
-                            {name}
-                        </Link>
-                        <div className={styles.textBlock}>
-                            <p className={classNames(styles.text, styles.textLabel, 'text_roboto_medium_size-md')}>
-                                {CHARACTER_CARD_LABEL_INPUTS.gender}
-                            </p>
-                            <p className={classNames(styles.text, 'text_roboto_regular_size-sm')}>{gender}</p>
-                        </div>
-                        <div className={styles.textBlock}>
-                            <p className={classNames(styles.text, styles.textLabel, 'text_roboto_medium_size-md')}>
-                                {CHARACTER_CARD_LABEL_INPUTS.species}
-                            </p>
-                            <p className={classNames(styles.text, 'text_roboto_regular_size-sm')}>{species}</p>
-                        </div>
-                        <div className={styles.textBlock}>
-                            <p className={classNames(styles.text, styles.textLabel, 'text_roboto_medium_size-md')}>
-                                {CHARACTER_CARD_LABEL_INPUTS.location}
-                            </p>
-                            <p
-                                className={classNames(
-                                    styles.text,
-                                    styles.textWithBorder,
-                                    'text_roboto_regular_size-sm',
-                                )}
-                            >
-                                {location}
-                            </p>
-                        </div>
-                        <div className={styles.textBlock}>
-                            <p className={classNames(styles.text, styles.textLabel, 'text_roboto_medium_size-md')}>
-                                {CHARACTER_CARD_LABEL_INPUTS.status}
-                            </p>
-                            <div className={styles.textWithIcon}>
-                                <p className={classNames(styles.text, 'text_roboto_regular_size-sm')}>{status}</p>
-                                <StatusIndicator status={status} />
-                            </div>
-                        </div>
-                        {isHoveredCard && (
-                            <IconButton icon={<IconEdit className={styles.icon} />} onClick={handleEdit} />
-                        )}
-                    </>
+                    <IconButton
+                        icon={<IconEdit />}
+                        onClick={startEditing}
+                        aria-label='Edit character'
+                        className={styles.editButton}
+                    />
                 )}
             </div>
-        </div>
+        </article>
     );
 };

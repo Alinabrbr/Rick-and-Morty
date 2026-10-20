@@ -4,20 +4,11 @@ import styles from './Button.module.scss';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: React.ReactNode;
-    mode?: 'default' | 'icon';
-    hoverable?: boolean;
 }
 
-export const Button = ({ icon, children, className, mode = 'default', hoverable = true, ...rest }: ButtonProps) => {
+export const Button = ({ icon, children, className, ...rest }: ButtonProps) => {
     return (
-        <button
-            className={classNames(
-                styles.button,
-                { [styles.icon]: mode === 'icon', [styles.hoverable]: hoverable },
-                className,
-            )}
-            {...rest}
-        >
+        <button className={classNames(styles.button, className)} {...rest}>
             {icon}
             {children && <span>{children}</span>}
         </button>

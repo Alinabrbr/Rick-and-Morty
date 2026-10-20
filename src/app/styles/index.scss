@@ -17,6 +17,10 @@
     --service-color-error: #f20f01;
     --service-color-success: #0fdb5a;
 
+    --status-color-alive: #22c55e;
+    --status-color-dead: #eab308;
+    --status-color-unknown: #ef4444;
+
     --text-color-placeholder: #0009;
 
     --border-color-default: #393939;
@@ -25,6 +29,16 @@
     --option-hover-color: rgb(0 0 0 / 5%);
     --shadow-color: #0000001a;
     --glow-color-rgb: 156, 253, 135;
+    --glow-shadow:
+        0 0 8px rgb(var(--glow-color-rgb), 0.9),
+        0 0 18px rgb(var(--glow-color-rgb), 0.8),
+        0 0 32px rgb(var(--glow-color-rgb), 0.7),
+        0 0 52px rgb(var(--glow-color-rgb), 0.6);
+    --link-text-shadow-outline:
+        0.5px 0 var(--link-color-accent-dark),
+        -0.5px 0 var(--link-color-accent-dark),
+        0 0.5px var(--link-color-accent-dark),
+        0 -0.5px var(--link-color-accent-dark);
 
     --link-color-accent: #00b0c8;
     --link-color-accent-dark: #003d46;
@@ -212,46 +226,4 @@ body {
         BlinkMacSystemFont,
         'Segoe UI',
         sans-serif;
-}
-
-.text_roboto_regular_size-sm {
-    font-family: var(--font-roboto), sans-serif;
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-md);
-}
-
-.text_roboto_regular_size-md {
-    font-family: var(--font-roboto), sans-serif;
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-md);
-}
-
-.text_roboto_medium_size-md {
-    font-family: var(--font-roboto), sans-serif;
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-xs);
-}
-
-.text_roboto_medium_size-xl {
-    font-family: var(--font-roboto), sans-serif;
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-md);
-}
-
-.text_poppins_semibold_size-sm {
-    font-family: var(--font-poppins), sans-serif;
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-xs);
-}
-
-.text_karla_bold_size-lg {
-    font-family: var(--font-karla), sans-serif;
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-xs);
 }

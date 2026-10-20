@@ -1,14 +1,15 @@
+import { Link } from 'react-router-dom';
+
 import { IconLogo } from '@/assets';
-import { NavLink } from '@/shared/ui';
 
 import styles from './Header.module.scss';
 
 export const Header = () => {
     return (
         <header className={styles.header}>
-            <NavLink to='/' aria-label='Rick and Morty — home' className='text_karla_bold_size-lg' hoverable={false}>
+            <Link to='/' aria-label='Rick and Morty — home' className={styles.logoLink}>
                 <IconLogo aria-hidden='true' />
-            </NavLink>
+            </Link>
             <div>
                 <button type='button'>Theme</button>
                 <button type='button'>РУ</button>

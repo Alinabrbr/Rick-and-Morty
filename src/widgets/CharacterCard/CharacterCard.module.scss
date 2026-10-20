@@ -6,9 +6,9 @@
     width: 508px;
     height: 248px;
     padding: 7px;
+    cursor: default;
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-card);
-    cursor: default;
 }
 
 .image {
@@ -26,13 +26,9 @@
 }
 
 .input {
-    color: var(--text-color-placeholder);
-}
+    @include text-roboto-regular-sm;
 
-.containerInput {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+    color: var(--text-color-placeholder);
 }
 
 .textBlock {
@@ -40,12 +36,14 @@
     flex-flow: column nowrap;
     gap: 7px;
 
-    &:last-of-type {
+    &.statusBlock {
         gap: 3px;
     }
 }
 
 .textLink {
+    @include text-roboto-medium-xl;
+
     color: var(--link-color-accent);
     text-decoration: none;
 }
@@ -55,10 +53,14 @@
 }
 
 .text {
+    @include text-roboto-regular-sm;
+
     color: var(--text-color-placeholder);
 }
 
 .textLabel {
+    @include text-roboto-medium-md;
+
     color: var(--text-color-label);
 }
 
@@ -70,16 +72,7 @@
     min-height: 21px;
 }
 
-.inputWithLabel {
-    display: flex;
-    flex-direction: column;
-}
-
 .selectorContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-
     & > :last-child {
         margin-left: -6px;
     }
@@ -101,8 +94,13 @@
     align-items: center;
 }
 
-.icon {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+@media (hover: hover) {
+    .editButton {
+        opacity: 0;
+    }
+
+    .containerCard:hover .editButton,
+    .editButton:focus-visible {
+        opacity: 1;
+    }
 }

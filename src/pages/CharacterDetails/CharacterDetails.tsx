@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
+
 import { IconArrowLeft } from '@/assets';
-import { classNames } from '@/shared/helpers';
-import { Loader, NavLink } from '@/shared/ui';
+import { Loader } from '@/shared/ui';
 
 import styles from './CharacterDetails.module.scss';
 
@@ -8,15 +9,12 @@ export const CharacterDetails = () => {
     return (
         <section className={styles.pageContainer}>
             <div className={styles.linkContainer}>
-                <NavLink
-                    to='/'
-                    icon={<IconArrowLeft />}
-                    className={classNames(styles.linkText, 'text_karla_bold_size-lg')}
-                >
+                <Link to='/' className={styles.backLink}>
+                    <IconArrowLeft aria-hidden='true' />
                     go back
-                </NavLink>
+                </Link>
             </div>
-            <Loader text='Loading character card...' className='text_karla_bold_size-lg' />
+            <Loader text='Loading character card...' />
         </section>
     );
 };

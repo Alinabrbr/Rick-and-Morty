@@ -7,10 +7,11 @@
 }
 
 .logo {
+    display: block;
     padding: 26px 0 40px;
 }
 
-.contentContainer {
+.characterList {
     display: flex;
     flex-direction: column;
     gap: 28px;

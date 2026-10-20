@@ -51,9 +51,10 @@
 }
 
 .small {
+    @include text-roboto-regular-sm-tight;
+
     width: 94px;
     height: 21px;
-    font-size: var(--font-size-sm);
 }
 
 .small .selector {
@@ -65,9 +66,10 @@
 }
 
 .large {
+    @include text-roboto-regular-md-tight;
+
     width: 240px;
     height: 56px;
-    font-size: var(--font-size-md);
 }
 
 .large .selector {

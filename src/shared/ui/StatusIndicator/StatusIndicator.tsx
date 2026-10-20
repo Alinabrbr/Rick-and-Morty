@@ -1,23 +1,13 @@
-import { STATUS_COLOR, STATUS_INDICATOR_SIZE, type StatusIndicatorSize, type StatusIndicatorStatus } from './constants';
+import { classNames } from '@/shared/helpers';
+import type { Status } from '@/shared/types/type';
 
 import styles from './StatusIndicator.module.scss';
 
 interface StatusIndicatorProps {
-    size?: StatusIndicatorSize;
-    status?: StatusIndicatorStatus;
+    status: Status;
+    size?: 'small' | 'large';
 }
 
-export const StatusIndicator = ({ status = 'Alive', size = 'small' }: StatusIndicatorProps) => {
-    const backgroundColor = STATUS_COLOR[status];
-
-    return (
-        <div
-            className={styles.circle}
-            style={{
-                width: STATUS_INDICATOR_SIZE[size],
-                height: STATUS_INDICATOR_SIZE[size],
-                backgroundColor,
-            }}
-        />
-    );
+export const StatusIndicator = ({ status, size = 'small' }: StatusIndicatorProps) => {
+    return <div className={classNames(styles.circle, styles[size])} data-status={status} />;
 };

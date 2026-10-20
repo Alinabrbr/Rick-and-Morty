@@ -5,8 +5,7 @@ export const STATUS_OPTIONS: Array<{ label: Status; value: Status }> = STATUSES.
     value: status,
 }));
 
-export const CHARACTER_CARD_LABEL_INPUTS = {
-    name: '',
+export const CHARACTER_FIELD_LABELS = {
     gender: 'Gender',
     species: 'Species',
     location: 'Location',

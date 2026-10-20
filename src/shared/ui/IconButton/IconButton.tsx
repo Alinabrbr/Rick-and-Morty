@@ -2,14 +2,14 @@ import { classNames } from '@/shared/helpers';
 
 import styles from './IconButton.module.scss';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    icon?: React.ReactNode;
-    hoverable?: boolean;
+interface IconButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
+    icon: React.ReactNode;
+    'aria-label': string;
 }
 
-export const IconButton = ({ icon, onClick, children, className, ...rest }: ButtonProps) => {
+export const IconButton = ({ icon, className, ...rest }: IconButtonProps) => {
     return (
-        <button className={classNames(styles.button, className)} {...rest} onClick={onClick} type='button'>
+        <button type='button' className={classNames(styles.button, className)} {...rest}>
             {icon}
         </button>
     );
