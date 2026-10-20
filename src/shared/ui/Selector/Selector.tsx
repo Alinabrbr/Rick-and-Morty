@@ -1,9 +1,9 @@
 import { type ComponentType, useEffect, useRef, useState } from 'react';
 
 import { IconDropDown } from '@/assets';
-import { customClassNames } from '@/shared/helpers';
+import { classNames } from '@/shared/helpers';
 
-import styles from './Selector.module.css';
+import styles from './Selector.module.scss';
 
 interface Option<T> {
     label: string;
@@ -119,7 +119,7 @@ export const Selector = <T,>({
     }, [isOpen]);
 
     return (
-        <div className={customClassNames(styles.wrapper, styles[size])} ref={wrapperRef}>
+        <div className={classNames(styles.wrapper, styles[size])} ref={wrapperRef}>
             <div
                 className={styles.selector}
                 role='combobox'

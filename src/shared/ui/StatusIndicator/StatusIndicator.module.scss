@@ -1,0 +1,25 @@
+.circle {
+    border-radius: 50%;
+}
+
+.small {
+    width: 10px;
+    height: 10px;
+}
+
+.large {
+    width: 20px;
+    height: 20px;
+}
+
+.circle[data-status='Alive'] {
+    background-color: var(--status-color-alive);
+}
+
+.circle[data-status='Dead'] {
+    background-color: var(--status-color-dead);
+}
+
+.circle[data-status='Unknown'] {
+    background-color: var(--status-color-unknown);
+}

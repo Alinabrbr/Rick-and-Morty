@@ -1,0 +1,106 @@
+.containerCard {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    width: 508px;
+    height: 248px;
+    padding: 7px;
+    cursor: default;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-card);
+}
+
+.image {
+    flex-shrink: 0;
+    width: 240px;
+    height: 234px;
+    border-radius: var(--border-radius-md);
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 70px;
+}
+
+.input {
+    @include text-roboto-regular-sm;
+
+    color: var(--text-color-placeholder);
+}
+
+.textBlock {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 7px;
+
+    &.statusBlock {
+        gap: 3px;
+    }
+}
+
+.textLink {
+    @include text-roboto-medium-xl;
+
+    color: var(--link-color-accent);
+    text-decoration: none;
+}
+
+.textWithBorder {
+    border-bottom: 1px solid transparent;
+}
+
+.text {
+    @include text-roboto-regular-sm;
+
+    color: var(--text-color-placeholder);
+}
+
+.textLabel {
+    @include text-roboto-medium-md;
+
+    color: var(--text-color-label);
+}
+
+.textWithIcon {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    min-height: 21px;
+}
+
+.selectorContainer {
+    & > :last-child {
+        margin-left: -6px;
+    }
+}
+
+.optionComponentWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    align-items: center;
+}
+
+.containerIcon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media (hover: hover) {
+    .editButton {
+        opacity: 0;
+    }
+
+    .containerCard:hover .editButton,
+    .editButton:focus-visible {
+        opacity: 1;
+    }
+}
