@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import { Container, Footer, Header } from '@/shared/layout';
 
-import styles from './RootLayout.module.css';
+import styles from './RootLayout.module.scss';
 
 export const RootLayout = () => {
     return (

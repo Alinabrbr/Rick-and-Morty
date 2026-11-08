@@ -1,1 +1,1 @@
-export * from './CustomClassNames.ts';
+export * from './classNames';

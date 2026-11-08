@@ -1,0 +1,23 @@
+.footer {
+    @include text-karla-bold-lg;
+
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60px;
+    padding-inline: var(--layout-padding-inline);
+    margin-top: auto;
+    box-shadow: -2px 0 8px 2px var(--shadow-color);
+}
+
+.link {
+    color: var(--link-color-accent);
+    text-decoration: none;
+    text-shadow: var(--link-text-shadow-outline);
+}
+
+.link:hover {
+    text-shadow: var(--link-text-shadow-outline), var(--glow-shadow);
+}

@@ -1,0 +1,17 @@
+.button {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 12px;
+    align-items: center;
+    height: 26px;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    transition: box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+    .button:hover {
+        box-shadow: var(--glow-shadow);
+    }
+}

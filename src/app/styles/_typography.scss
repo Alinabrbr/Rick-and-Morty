@@ -1,0 +1,55 @@
+@mixin text-roboto-regular-sm {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-md);
+}
+
+@mixin text-roboto-regular-md {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-md);
+}
+
+@mixin text-roboto-regular-sm-tight {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-xs);
+}
+
+@mixin text-roboto-regular-md-tight {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-xs);
+}
+
+@mixin text-roboto-medium-md {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-xs);
+}
+
+@mixin text-roboto-medium-xl {
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-md);
+}
+
+@mixin text-poppins-semibold-sm {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-xs);
+}
+
+@mixin text-karla-bold-lg {
+    font-family: var(--font-karla), sans-serif;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-xs);
+}
